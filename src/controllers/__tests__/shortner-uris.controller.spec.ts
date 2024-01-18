@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ShortnerUrisController } from './shortner-uris.controller';
+import { ShortnerUrisController } from '../../controllers/shortner-uris.controller';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { ShortnerUrisService } from './shortner-uris.service';
+import { ShortnerUrisService } from '../../services/shortner-uris.service';
 import * as request from 'supertest';
-import { AuthModule } from '../auth/auth.module';
-import { UsersModule } from '../users/users.module';
+import { AuthModule } from '../../modules/auth.module';
+import { UsersModule } from '../../modules/users.module';
 
 const mockShortnerUrisService = () => ({
     createShortUri: jest.fn()

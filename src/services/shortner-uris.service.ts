@@ -1,11 +1,11 @@
 import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateShortnerUrisDto } from './dto/create-shortner-uris.dto';
-import { ShortnerUrisDto } from './dto/shortner-uris.dto';
-import { ShortnerUrisRepository } from './shortner-uris.repository';
+import { CreateShortnerUrisDto } from '../dto/create-shortner-uris.dto';
+import { ShortnerUrisDto } from '../dto/shortner-uris.dto';
+import { ShortnerUrisRepository } from '../repositories/shortner-uris.repository';
 import { Observable, from } from 'rxjs';
-import { ShortnerUris } from './shortner-uris.entity';
-import { ShortnerUrisDtoBuilder } from './dto/shortner-uris-dto.builder';
+import { ShortnerUris } from '../entities/shortner-uris.entity';
+import { ShortnerUrisDtoBuilder } from '../dto/shortner-uris-dto.builder';
 
 @Injectable()
 export class ShortnerUrisService {

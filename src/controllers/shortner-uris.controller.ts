@@ -1,13 +1,13 @@
 import { Body, Request, Controller, Get, Param, Post, Response, UseGuards, Delete } from '@nestjs/common';
 import { ApiBearerAuth, ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { CreateShortnerUrisDto } from './dto/create-shortner-uris.dto';
-import { ShortnerUrisDto } from './dto/shortner-uris.dto';
-import { AuthDto } from '../auth/dto/auth.dto';
-import { ShortnerUrisService } from './shortner-uris.service';
+import { CreateShortnerUrisDto } from '../dto/create-shortner-uris.dto';
+import { ShortnerUrisDto } from '../dto/shortner-uris.dto';
+import { AuthDto } from '../dto/auth.dto';
+import { ShortnerUrisService } from '../services/shortner-uris.service';
 import * as express from 'express';
-import { AuthService } from '../auth/auth.service';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
-import { LocalAuthGuard } from '../auth/local-auth.guard';
+import { AuthService } from '../services/auth.service';
+import { JwtAuthGuard } from '../authGuard/jwt-auth.guard';
+import { LocalAuthGuard } from '../authGuard/local-auth.guard';
 
 @Controller()
 @ApiTags('Encurtar URL')

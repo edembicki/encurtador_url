@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ShortnerUrisModule } from './shortner-uris/shortner-uris.module';
+import { ShortnerUrisModule } from './modules/shortner-uris.module';
 import { typeOrmConfig } from './typeorm.config';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
+import { AuthModule } from './modules/auth.module';
+import { UsersModule } from './modules/users.module';
 
 @Module({
   imports: [

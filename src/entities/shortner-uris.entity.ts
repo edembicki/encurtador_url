@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { ShortnerUrisDtoBuilder } from "./dto/shortner-uris-dto.builder";
-import { ShortnerUrisDto } from "./dto/shortner-uris.dto";
+import { ShortnerUrisDtoBuilder } from "../dto/shortner-uris-dto.builder";
+import { ShortnerUrisDto } from "../dto/shortner-uris.dto";
 import { customAlphabet } from 'nanoid/async';
 import * as config from 'config';
 
@@ -46,7 +46,7 @@ export class ShortnerUris {
 
     async toDtoWithNewUrl (): Promise<ShortnerUrisDto> {
         return new ShortnerUrisDtoBuilder()
-            .withNewUrl(`${this.shortUri}`)
+            .withNewUrl(`${serverConfig.protocol}://${serverConfig.host}:${serverConfig.port}/${this.shortUri}`)
             .build();
     }
 
